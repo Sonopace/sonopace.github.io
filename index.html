@@ -14,8 +14,11 @@
 <meta name="author" content="Sonopace" />
 <link rel="shortcut icon" href="../favicon.ico"> 
 <link href="css/musicplayer.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/jquery.modal.css" type="text/css" media="screen" />
 <link href="css/main.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 
@@ -45,7 +48,50 @@
 <h1 class="slogon">Life is meant to be heard!</h1>
   </div>
 
+
+  <!-- Modal HTML embedded directly into document -->
+  <div id="ex1" style="display:none;">
+<p>Thanks for clicking.  That felt good.  <a href="#" rel="modal:close">Close</a> or press ESC</p>
+  </div>
+
+  <!-- Footer  -->
+
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+
+</div>
+
+<div class="footer-left">
+
+  <p class="footer-links">
+  <a href="#">Home</a>
+  ·
+  <a href="#ex1" rel="modal:open">team</a>
+  ·
+  <a href="#">Blog</a>
+  ·
+  <a href="#">Pricing</a>
+  ·
+  <a href="#">About</a>
+  ·
+  <a href="#">Faq</a>
+  ·
+  <a href="#">Contact</a>
+  </p>
+
+  <p>SonoPace &copy; 2016</p>
+</div>
+
+		</footer>
+
   <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="js/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+
   <script src="js/musicplayer.js" type="text/javascript"></script>
   <link rel="stylesheet" href="js/vegas/vegas.min.css">
   <script src="js/vegas/vegas.min.js"></script>
@@ -69,4 +115,6 @@ slides: [
 });
   </script>
   </body>
+
+
 </html>

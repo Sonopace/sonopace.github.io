@@ -24,3 +24,18 @@ body{
   text-shadow: 2px 2px 4px #000;
 
 }
+
+.logo {
+  text-decoration:none;
+  border:2;
+  width : 130px;
+  height : 150px;
+  margin : 0;
+  padding : 0;
+}
+
+h1 a {
+  display : block;
+  height : 113px;
+  text-indent : -9999px; 
+}

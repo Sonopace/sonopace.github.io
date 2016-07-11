@@ -10,9 +10,9 @@
   this.AudioPlayer = (function() {
     AudioPlayer.States = {
       Ready: 0,
-      Playing: 1,
-      Loading: 2,
-      Error: 3
+    Playing: 1,
+    Loading: 2,
+    Error: 3
     };
 
     AudioPlayer.prototype.audioPlayerEvents = ["abort", "error", "play", "playing", "seeked", "pause", "ended", "canplay", "loadstart", "loadeddata", "canplaythrough", "seeking", "stalled", "waiting", "progress"];
@@ -24,20 +24,20 @@
     AudioPlayer.prototype.setOptions = function(options) {
       var key, value;
       if (options == null) {
-        options = {};
+	options = {};
       }
       for (key in options) {
-        value = options[key];
-        this[key] = value;
+	value = options[key];
+	this[key] = value;
       }
       if (options.el) {
-        return this.setEl(options.el);
+	return this.setEl(options.el);
       }
     };
 
     AudioPlayer.prototype.setEl = function(el) {
       if (this.el) {
-        this._unbindEvents();
+	this._unbindEvents();
       }
       this.el = el;
       return this._bindEvents();
@@ -47,8 +47,8 @@
       var state, _ref;
       state = this.isErrored() ? AudioPlayer.States.Error : this.isLoading() ? AudioPlayer.States.Loading : this.isPlaying() ? AudioPlayer.States.Playing : AudioPlayer.States.Ready;
       if (this.state !== state) {
-        this.state = state;
-        return (_ref = this.ui) != null ? _ref.AudioPlayerUpdateState(state) : void 0;
+	this.state = state;
+	return (_ref = this.ui) != null ? _ref.AudioPlayerUpdateState(state) : void 0;
       }
     };
 
@@ -62,7 +62,7 @@
 
     AudioPlayer.prototype.isLoading = function() {
       if (!this.state && this.isEmpty()) {
-        return false;
+	return false;
       }
       return this.el.networkState === this.el.NETWORK_LOADING && this.el.readyState < this.el.HAVE_FUTURE_DATA;
     };
@@ -82,9 +82,9 @@
     AudioPlayer.prototype.play = function() {
       var _ref;
       if (this.isEmpty()) {
-        if ((_ref = this.ui) != null) {
-          _ref.AudioPlayerUpdateState(AudioPlayer.States.Loading);
-        }
+	if ((_ref = this.ui) != null) {
+	  _ref.AudioPlayerUpdateState(AudioPlayer.States.Loading);
+	}
       }
       return this.el.play();
     };
@@ -114,9 +114,9 @@
     AudioPlayer.prototype.handleEvent = function(event) {
       var _ref;
       if (_ref = event.type, __indexOf.call(this.audioPlayerEvents, _ref) >= 0) {
-        return this.updateState(event);
+	return this.updateState(event);
       } else if (event.type === "timeupdate") {
-        return this._timeUpdate(event);
+	return this._timeUpdate(event);
       }
     };
 
@@ -129,8 +129,8 @@
       var eventName, _i, _len, _ref;
       _ref = this.audioPlayerEvents;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        eventName = _ref[_i];
-        this.el.addEventListener(eventName, this);
+	eventName = _ref[_i];
+	this.el.addEventListener(eventName, this);
       }
       return this.el.addEventListener("timeupdate", this);
     };
@@ -139,8 +139,8 @@
       var eventName, _i, _len, _ref;
       _ref = this.audioPlayerEvents;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        eventName = _ref[_i];
-        this.el.removeEventListener(eventName, this);
+	eventName = _ref[_i];
+	this.el.removeEventListener(eventName, this);
       }
       return this.el.removeEventListener("timeupdate", this);
     };
@@ -148,7 +148,7 @@
     AudioPlayer.prototype._timeUpdate = function(e) {
       var _ref;
       if (!this.isLoading()) {
-        return (_ref = this.ui) != null ? typeof _ref.AudioPlayerTimeUpdated === "function" ? _ref.AudioPlayerTimeUpdated(this.percentComplete()) : void 0 : void 0;
+	return (_ref = this.ui) != null ? typeof _ref.AudioPlayerTimeUpdated === "function" ? _ref.AudioPlayerTimeUpdated(this.percentComplete()) : void 0 : void 0;
       }
     };
 
@@ -161,16 +161,16 @@
 
     function AudioPlayerUI(options) {
       if (options == null) {
-        options = {};
+	options = {};
       }
       this.setOptions(options);
       this.audioPlayer = new AudioPlayer({
-        ui: this
+	ui: this
       });
       this._createAudioEl();
       this._createImageEl();
       if (options.el) {
-        this.setEl(options.el);
+	this.setEl(options.el);
       }
       this.goToSong(0);
     }
@@ -179,8 +179,8 @@
       var key, value, _results;
       _results = [];
       for (key in options) {
-        value = options[key];
-        _results.push(this[key] = value);
+	value = options[key];
+	_results.push(this[key] = value);
       }
       return _results;
     };
@@ -203,9 +203,9 @@
 
     AudioPlayerUI.prototype.togglePlayPause = function() {
       if (this.audioPlayer.isPlaying()) {
-        return this.audioPlayer.pause();
+	return this.audioPlayer.pause();
       } else {
-        return this.audioPlayer.play();
+	return this.audioPlayer.play();
       }
     };
 
@@ -218,37 +218,37 @@
       this.$name[0].innerHTML = this.songs[index].name;
       this.audioPlayer.setEl(this.audioEl);
       this.$progressBar.css({
-        width: 0
+	width: 0
       });
       this.audioPlayer.load();
       if (wasPlaying) {
-        return this.audioPlayer.play();
+	return this.audioPlayer.play();
       }
     };
 
     AudioPlayerUI.prototype.nextSong = function() {
       if (this.currentSong === this.songs.length - 1) {
-        return this.goToSong(0);
+	return this.goToSong(0);
       } else {
-        return this.goToSong(this.currentSong + 1);
+	return this.goToSong(this.currentSong + 1);
       }
     };
 
     AudioPlayerUI.prototype.previousSong = function() {
       if (this.currentSong === 0) {
-        return this.goToSong(this.songs.length - 1);
+	return this.goToSong(this.songs.length - 1);
       } else {
-        return this.goToSong(this.currentSong - 1);
+	return this.goToSong(this.currentSong - 1);
       }
     };
 
     AudioPlayerUI.prototype.seek = function(e) {
       var duration, offset, percent, seekTo, _ref;
       if (offset = e.offsetX || ((_ref = e.originalEvent) != null ? _ref.layerX : void 0)) {
-        percent = offset / this.$progressContainer.width();
-        duration = this.audioPlayer.duration();
-        seekTo = duration * percent;
-        return this.audioPlayer.seekTo(seekTo);
+	percent = offset / this.$progressContainer.width();
+	duration = this.audioPlayer.duration();
+	seekTo = duration * percent;
+	return this.audioPlayer.seekTo(seekTo);
       }
     };
 
@@ -256,19 +256,19 @@
       this.$el.toggleClass("error", this.audioPlayer.isErrored());
       this.$progressContainer.toggleClass("loading", this.audioPlayer.isLoading());
       if (this.audioPlayer.isPlaying()) {
-        this.$button.removeClass("icon-play").addClass("icon-pause");
+	this.$button.removeClass("icon-play").addClass("icon-pause");
       } else {
-        this.$button.removeClass("icon-pause").addClass("icon-play");
+	this.$button.removeClass("icon-pause").addClass("icon-play");
       }
       if (this.audioPlayer.isEnded() && this.currentSong !== this.songs.length - 1) {
-        this.nextSong();
-        return this.audioPlayer.play();
+	this.nextSong();
+	return this.audioPlayer.play();
       }
     };
 
     AudioPlayerUI.prototype.AudioPlayerTimeUpdated = function(percentComplete) {
       return this.$progressBar.css({
-        width: "" + (percentComplete * 100) + "%"
+	width: "" + (percentComplete * 100) + "%"
       });
     };
 
@@ -283,16 +283,16 @@
     AudioPlayerUI.prototype._updateSourceAttributes = function(index) {
       var source, sourceEl, _i, _len, _ref, _results;
       while (this.audioEl.firstChild) {
-        this.audioEl.removeChild(this.audioEl.firstChild);
+	this.audioEl.removeChild(this.audioEl.firstChild);
       }
       _ref = this.songs[index].srcs;
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        source = _ref[_i];
-        sourceEl = document.createElement("source");
-        sourceEl.setAttribute("src", source.src);
-        sourceEl.setAttribute("type", source.type);
-        _results.push(this.audioEl.appendChild(sourceEl));
+	source = _ref[_i];
+	sourceEl = document.createElement("source");
+	sourceEl.setAttribute("src", source.src);
+	sourceEl.setAttribute("type", source.type);
+	_results.push(this.audioEl.appendChild(sourceEl));
       }
       return _results;
     };
@@ -300,25 +300,25 @@
     AudioPlayerUI.prototype._updateImageAttributes = function(index) {
       var callback, secondImage;
       callback = (function(_this) {
-        return function() {
-          _this.image.removeAttribute("class");
-          $(_this.image).off(_this.transitionEvents.join(" "));
-          _this.image.setAttribute("src", _this.songs[index].image);
-          return setTimeout(function() {
-            if (secondImage) {
-              return _this.$imageContainer[0].removeChild(secondImage);
-            }
-          }, 500);
-        };
+	return function() {
+	  _this.image.removeAttribute("class");
+	  $(_this.image).off(_this.transitionEvents.join(" "));
+	  _this.image.setAttribute("src", _this.songs[index].image);
+	  return setTimeout(function() {
+	    if (secondImage) {
+	      return _this.$imageContainer[0].removeChild(secondImage);
+	    }
+	  }, 500);
+	};
       })(this);
       if (Modernizr.csstransitions && this.$imageContainer && this.image.getAttribute("src")) {
-        secondImage = document.createElement("img");
-        secondImage.setAttribute("src", this.songs[index].image);
-        this.image.setAttribute("class", "fading");
-        this.$imageContainer.append(secondImage);
-        return $(this.image).on(this.transitionEvents.join(" "), callback);
+	secondImage = document.createElement("img");
+	secondImage.setAttribute("src", this.songs[index].image);
+	this.image.setAttribute("class", "fading");
+	this.$imageContainer.append(secondImage);
+	return $(this.image).on(this.transitionEvents.join(" "), callback);
       } else {
-        return callback();
+	return callback();
       }
     };
 
@@ -332,13 +332,13 @@
     AudioPlayerUI.prototype._unbindEvents = function() {
       var _ref, _ref1, _ref2, _ref3;
       if ((_ref = this.$button) != null) {
-        _ref.off("click", this.togglePlayPause);
+	_ref.off("click", this.togglePlayPause);
       }
       if ((_ref1 = this.$backButton) != null) {
-        _ref1.off("click", this.previousSong);
+	_ref1.off("click", this.previousSong);
       }
       if ((_ref2 = this.$nextButton) != null) {
-        _ref2.off("click", this.nextSong);
+	_ref2.off("click", this.nextSong);
       }
       return (_ref3 = this.$progressContainer) != null ? _ref3.off("mouseup", this.seek) : void 0;
     };
@@ -350,32 +350,26 @@
   this.audioPlayer = new AudioPlayerUI({
     el: document.getElementById("audio-player"),
     songs: [
-      {
-        image: "images/district.png",
-        name: "District Cafe",
-        srcs: [
-          {
-	    src: "http://54.153.63.199:8000/cafe.ogg",
-            type: "audio/ogg"
-          }
-        ]
-      }, {
-        image: "images/district.png",
-        name: "District Rooftop",
-        srcs: [
-          {
-	    src: "http://54.153.63.199:8000/rooftop.ogg",
-            type: "audio/ogg"
-          }, {
-            src: "ShotgunLove.m4a",
-            type: "audio/mp4"
-          }, {
-            src: "ShotgunLove.ogg",
-            type: "audio/ogg"
-          }
-        ]
-      }
+  {
+    image: "images/district.png",
+    name: "District Cafe",
+    srcs: [
+  {
+    src: "http://54.153.63.199:8000/cafe.ogg",
+    type: "audio/ogg"
+  }
+  ]
+  }, {
+    image: "images/district.png",
+    name: "District Rooftop",
+    srcs: [
+  {
+    src: "http://54.153.63.199:8000/rooftop.ogg",
+    type: "audio/ogg"
+  } 
+  ]
+  }
     ]
   });
 
-}).call(this);
+  }).call(this);

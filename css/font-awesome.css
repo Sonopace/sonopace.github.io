@@ -47,8 +47,9 @@
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   text-decoration: inherit;
-  display: inline-block;
-  speak: none;
+/*  display: inline-block;
+*/ 
+speak: none;
 }
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {

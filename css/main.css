@@ -19,7 +19,7 @@ body{
   text-align: center;
   font-family: 'BebasNeuewebfont', 'Arial Narrow', Arial, sans-serif;
   line-height: 10px;
-  font-size: 70px; 
+  font-size: 60px; 
   color: rgba(0,0,0,0.6);
   text-shadow: 1px 1px 2px White;
 
@@ -28,10 +28,10 @@ body{
 .logo {
   text-decoration:none;
   border:2;
-  width : 130px;
-  height : 150px;
-  margin : 0;
-  padding : 0;
+  width : 180px;
+  height : 200px;
+  margin : 10;
+  padding : 10;
 }
 
 h1 a {

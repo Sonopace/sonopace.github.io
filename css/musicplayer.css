@@ -149,14 +149,14 @@ border-radius: 25px; }
 
 /* line 103, /Users/Rose/Sites/audio_player/source/stylesheets/style.sass */
 .audio-player-button {
+  padding: 20px 20px 20px 20px; 
   display: block;
   position: relative;
-  float: left;
-  width: 70px;
-  height: 70px;
+  float: left !important;
   margin: 0 5px;
-  border-radius: 100%;
-  border: 12px solid yellow;
+  /*border-radius: 100%;
+border: 42px solid yellow;
+  */
   opacity: 0.5;
 cursor: pointer; }
 /* line 114, /Users/Rose/Sites/audio_player/source/stylesheets/style.sass */
@@ -164,17 +164,18 @@ cursor: pointer; }
 opacity: 1; }
 /* line 116, /Users/Rose/Sites/audio_player/source/stylesheets/style.sass */
 .audio-player-button::before {
-  position: absolute;
-  top: -1px;
-  bottom: 0;
+  /*position: absolute;
+top: -1px;
+bottom: 0;
   left: -12px;
   right: 0;
+   */
   width: 0px;
   height: 0px;
   margin: auto;
   line-height: 1px;
   font-size: 40px;
-color: #808e97; }
+color: yellow; }
 /* line 128, /Users/Rose/Sites/audio_player/source/stylesheets/style.sass */
 .audio-player-button.icon-pause::before {
   font-size: 40px;
@@ -194,8 +195,10 @@ font-size: 40px; }
 
 /* line 141, /Users/Rose/Sites/audio_player/source/stylesheets/style.sass */
 .audio-player-button-wrappers {
+  padding: 80px 90px 90px 90px; 
+  display: block !important;
   overflow: hidden;
-	    *zoom: 1;
-	    display: block;
-	    width: 133px;
-	  margin: 15px auto 0 auto; }
+  width: 900px;
+	 *zoom: 1;
+	 width: 133px;
+       margin: 15px auto 0 auto; }

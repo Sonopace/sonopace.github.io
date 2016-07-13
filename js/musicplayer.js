@@ -355,10 +355,9 @@
     name: "District Cafe",
     srcs: [
   {
-    src: "http://54.153.63.199:8000/cafe.ogg.m3u",
-    //src: "http://54.153.63.199:8000/cafe.ogg",
+    src: "http://54.153.63.199:8000/cafe.ogg",
     //type: "audio/ogg"
-    type: "audio/mpegURL"
+    type: "audio/mpeg"
   }
   ]
   }, {

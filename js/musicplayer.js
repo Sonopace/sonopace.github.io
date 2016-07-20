@@ -360,16 +360,6 @@
     type: "audio/mpeg"
   }
   ]
-  }, {
-    image: "images/district.png",
-    name: "District Rooftop",
-    srcs: [
-  {
-    src: "http://54.153.63.199:8000/rooftop.ogg",
-    //type: "audio/ogg"
-    type: "audio/mpeg"
-  } 
-  ]
   }
     ]
   });

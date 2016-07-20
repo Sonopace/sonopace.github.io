@@ -352,7 +352,7 @@
     songs: [
   {
     image: "images/district.png",
-    name: "District Cafe",
+    name: "District Spaces",
     srcs: [
   {
     src: "http://54.153.63.199:8000/cafe.ogg",

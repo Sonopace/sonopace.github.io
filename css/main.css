@@ -35,8 +35,8 @@ body{
   border:2;
   width : 180px;
   height : 200px;
-/*  margin : 10;
-  padding : 10; */
+  margin : 10;
+  padding : 10; 
 }
 
 h1 a {
@@ -53,12 +53,6 @@ width: 100%;
        text-align: left;
        font-family: 'HelveticaWorld', 'BebasNeuewebfont', 'Arial Narrow', Arial, sans-serif;
 opacity: 0.9;
-padding: 45px 50px;
-	 margin-top: 80px;
-float: none;
-       text-align: center;
-margin: 0 auto 20px;
-	line-height: 1.8;
 }
 
 .footer-distributed{

@@ -10,9 +10,9 @@
   this.AudioPlayer = (function() {
     AudioPlayer.States = {
       Ready: 0,
-    Playing: 1,
-    Loading: 2,
-    Error: 3
+      Playing: 1,
+      Loading: 2,
+      Error: 3
     };
 
     AudioPlayer.prototype.audioPlayerEvents = ["abort", "error", "play", "playing", "seeked", "pause", "ended", "canplay", "loadstart", "loadeddata", "canplaythrough", "seeking", "stalled", "waiting", "progress"];
@@ -350,18 +350,32 @@
   this.audioPlayer = new AudioPlayerUI({
     el: document.getElementById("audio-player"),
     songs: [
-  {
-    image: "images/district.png",
-    name: "District Spaces",
-    srcs: [
-  {
-    src: "http://54.153.63.199:8000/cafe.ogg",
-    //type: "audio/ogg"
-    type: "audio/mpeg"
-  }
-  ]
-  }
+    {
+      image: "images/district.png",
+      name: "District Spaces",
+      srcs: [
+      {
+	src: "http://54.153.63.199:8000/cafe.ogg",
+	//type: "audio/ogg"
+	type: "audio/mpeg"
+      }
+      ]
+
+    },
+    {
+      image: "images/coffeecorner.png",
+      name: "Coffee Corner",
+      srcs: [
+      {
+	src: "http://54.153.63.199:8000/coffeecorner.ogg",
+	//type: "audio/ogg"
+	type: "audio/mpeg"
+      }
+      ]
+
+    }
+
     ]
   });
 
-  }).call(this);
+}).call(this);

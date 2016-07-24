@@ -40,7 +40,7 @@ display: none; }
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 100%;
+  max-width: 10%;
 height: auto; }
 /* line 56, /Users/Rose/Sites/audio_player/source/stylesheets/style.sass */
 .audio-player-image > img.fading {

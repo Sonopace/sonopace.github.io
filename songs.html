@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Two grids demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/gridstack.css"/>
+    <link rel="stylesheet" href="./css/gridstack-extra.css"/>
+    <link rel="stylesheet" href="./css/sonopacegridstack.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+
+    <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      <script src="./js/underscore-min.js"></script>
+      -->
+
+      <script src="./js/gridstack.js"></script>
+      <style type="text/css">
+      </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Upload Songs</h1>
+
+      <div class="row">
+	<div class="col-md-3">
+	  <div class="upload">
+
+		<span style="font-size:3em;" class="glyphicon glyphicon-upload lg" aria-hidden="true"></span>
+
+      <!--
+	<div class="grid-stack-item"><div class="grid-stack-item-content">Drag me</div></div>
+      -->
+	  </div>
+	</div>
+	<div class="col-md-9">
+	  <div class="trash">
+	      <span style="font-size:3em;" class="glyphicon glyphicon-trash lg" aria-hidden="true"></span>
+	  </div>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-md-6">
+	  Like Now
+	  <div class="grid-stack grid-stack-6" id="grid1">
+	    <div class="grid-stack-item"><div class="grid-stack-item-content"> 
+		 Drag me</div></div>
+	  </div>
+	</div>
+	<div class="col-md-6">
+	  Library 
+	  <div class="grid-stack grid-stack-6" id="grid2">
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+$(function () {
+  var options = {
+    width: 3,
+    float: false,
+    removable: '.trash',
+    removeTimeout: 100,
+    acceptWidgets: '.grid-stack-item'
+  };
+  $('#grid1').gridstack(options);
+  $('#grid2').gridstack(_.defaults({
+    float: false 
+  }, options));
+
+  var items = [
+  {x: 0, y: 0, width: 3, height: 1},
+  {x: 3, y: 1, width: 3, height: 1},
+  {x: 4, y: 1, width: 3, height: 1},
+  {x: 2, y: 3, width: 3, height: 1},
+  {x: 2, y: 5, width: 3, height: 1}
+  ];
+
+  $('.grid-stack').each(function () {
+    var grid = $(this).data('gridstack');
+
+    _.each(items, function (node) {
+      grid.addWidget($('<div><div class="grid-stack-item-content"> helo </div></div>'),
+	  node.x, node.y, node.width, node.height);
+    }, this);
+  });
+
+  $('.sidebar .grid-stack-item').draggable({
+    revert: 'invalid',
+    handle: '.grid-stack-item-content',
+    scroll: false,
+    appendTo: 'body'
+  });
+});
+    </script>
+  </body>
+</html>
+

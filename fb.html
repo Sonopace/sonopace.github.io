@@ -89,6 +89,22 @@ function testAPI() {
       Below we include the Login Button social plugin. This button uses
       the JavaScript SDK to present a graphical Login button that triggers
       the FB.login() function when clicked.
+
+
+
+      FB.login(function(response) {
+      if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      getUserInfo(); // Get User Information.
+      } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+                   console.log('Authorization failed.');
+      } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      }
+      }, {scope: 'public_profile,email'});
+
     -->
 
     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">

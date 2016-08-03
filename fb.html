@@ -36,8 +36,6 @@ function statusChangeCallback(response) {
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
-    // Added by me
-    console.log(response);
   });
 }
 
@@ -85,6 +83,9 @@ function testAPI() {
     document.getElementById('status').innerHTML =
       'Thanks for logging in, ' + response.name + '!';
     console.log(FB.getAuthResponse);
+    console.log('trying to get accesstoken to send back to backend');
+    var accessToken = response.authResponse.accessToken;
+    console.log(accessToken);
   });
 }
     </script>

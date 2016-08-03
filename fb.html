@@ -19,6 +19,7 @@ function statusChangeCallback(response) {
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
     var accessToken = response.authResponse.accessToken;
+    console.log('Call the mothership server and let her know about the accesToken;');
     console.log(accessToken);
     // Call the mothership server and let her know about the accesToken;
     testAPI();
@@ -91,7 +92,6 @@ function testAPI() {
     document.getElementById('status').innerHTML =
       'Thanks for logging in, ' + response.name + '!';
     console.log(FB.getAuthResponse);
-    console.log('trying to get accesstoken to send back to backend');
   });
 }
     </script>

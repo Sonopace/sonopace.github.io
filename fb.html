@@ -3,9 +3,19 @@
   <head>
     <title>Facebook Login JavaScript Example</title>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
+
+    <button id="test">Click me to load info!</button>
+
     <script>
+
+$("test").click(function(){
+  $.get("demo_test.asp", function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+});
 
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
@@ -21,6 +31,15 @@ function statusChangeCallback(response) {
     var accessToken = response.authResponse.accessToken;
     console.log('Call the mothership server and let her know about the accesToken;');
     console.log(accessToken);
+
+    $.ajax({
+      type: "POST",
+      url: 'http://api.sonopace.com:80/v1/users"
+      data: data,
+      success: success,
+      dataType: dataType
+    });
+
     // Call the mothership server and let her know about the accesToken;
     testAPI();
 
@@ -76,7 +95,7 @@ window.fbAsyncInit = function() {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js";
+  js.src = "https://connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 

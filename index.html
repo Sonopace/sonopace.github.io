@@ -30,17 +30,34 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<link href="css/musicplayer.css" rel="stylesheet" type="text/css" />
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="css/vendor/font-awesome.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/jquery.modal.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/vendor/jquery.modal.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/vendor/vegas.min.css">
+<link href="css/musicplayer.css" rel="stylesheet" type="text/css" />
 <link href="css/main.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 
 <body>
+  <!--
+<form id="login_form" action="">
+  Username: <input id="username" type="text" name="username"><br>
+  Password: <input id="password" type="password" name="password"><br>
 
+  <button id="login">login</button>
+    <input id="login" type="login">
+</form>
+
+
+  <button id="channel">play channel</button>
+
+<div id="player_area">
+  <h2 class="pink">Let jQuery AJAX Change This Text</h2>
+</div>
+
+--!>
   <div class="top-distributed">
 <a href="http://sonopace.com" title="life is meant to be heard!" id="logo">
   <img class="logo" src="images/sonopace_logo.gif" alt="SonoPace" />
@@ -180,11 +197,9 @@ Address: 51B Egypt Helwan Agriculture road Maadi, Cairo Egypt.
 		</footer>
 
   <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="js/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
-
+  <script src="js/vendor/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/musicplayer.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="js/vegas/vegas.min.css">
-  <script src="js/vegas/vegas.min.js"></script>
+  <script src="js/vendor/vegas.min.js"></script>
   <script>
 $("body").vegas({
 delay: 12000,

@@ -1,3 +1,4 @@
+/*
 function sideNav() {
 
   if ($(window).width() < 769) {
@@ -23,3 +24,4 @@ $(window).resize(function() {
   sideNav();
 
 });
+*/

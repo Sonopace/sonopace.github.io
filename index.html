@@ -61,24 +61,7 @@
 <body>
 
 
-  <div class="top-distributed">
-    <div class="container">
-      <div class="row">
-	<div class="col-xs-3">
-	  <a href="http://sonopace.com" title="life is meant to be heard!" id="logo">
-	    <img class="logo" src="images/sonopace_logo.gif" alt="SonoPace" />
-	  </a>
-	</div>
-	<div class="col-xs-7">
-	  <h3 id="sonoads"></h3>
-	</div>
-      </div>
-    </div>
-  </div>
 
-
-
-  
   <!--
     <div class="top-distributed">
     <form id="login_form" action="">
@@ -111,8 +94,23 @@
 
   -->
 
-
   <div class="top-distributed">
+    <div class="container">
+      <div class="row">
+	<div class="col-xs-3">
+	  <a href="http://sonopace.com" title="life is meant to be heard!" id="logo">
+	    <img class="logo" src="images/sonopace_logo.gif" alt="SonoPace" />
+	  </a>
+	</div>
+	<div class="col-xs-7">
+	  <h3 id="sonoads"></h3>
+	</div>
+      </div>
+    </div>
+
+
+
+
     <div class="container">    
       <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
 	<div class="panel panel-info" >
@@ -152,7 +150,7 @@
 		<div class="col-md-12 control">
 		  <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
 		    <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-		      Don't have an account! <b>Sign Up Here</b>
+		      Don't have an account! <b>Sign Up</b>
 		    </a>
 		  </div>
 		</div>
@@ -225,7 +223,7 @@
 		<div class="col-md-12 control">
 		  <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
 		    <div>
-		      <div style="float:left; font-size: 125%; position: relative;"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Have a Space account? please <b>Sign In</b></a></div>
+		      <div style="float:left; font-size: 125%; position: relative;"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Have a Space account? <b>Sign In</b></a></div>
 		    </div>
 
 		  </div>
@@ -418,23 +416,23 @@ $("body").vegas({
   <script>
 $(function(){
   $("#sonoads").typed({
+    loop: true,
     strings: ["<b>Share</b> the <b>Best</b> Space Experiences!", 
     "<b>Enjoy</b> your Music <b>Everywhere</b>!",
     "Be <b>Happy</b> & <b>Feel</b> life!"],
     // typing speed
-    //typeSpeed: -2,
+    typeSpeed: 70,
     // time before typing starts
-    //startDelay: 0,
+    startDelay: 100,
     // backspacing speed
     //backSpeed: 0,
     // shuffle the strings
     //shuffle: true,
     // time before backspacing
     //backDelay: 10,
-    loop: true,
+    //typeSpeed: 0
     showCursor: false,
-    contentType: 'html',
-    typeSpeed: 0
+    contentType: 'html'
   });
 });
   </script>

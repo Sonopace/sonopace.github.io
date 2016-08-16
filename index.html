@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="css/vendor/jquery.modal.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="css/vendor/vegas.min.css">
   <link href="css/musicplayer.css" rel="stylesheet" type="text/css" />
-  <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <link href="css/app.css" rel="stylesheet" type="text/css" />
 
 
   <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -62,13 +62,23 @@
 
 
   <div class="top-distributed">
-    <a href="http://sonopace.com" title="life is meant to be heard!" id="logo">
-      <img class="logo" src="images/sonopace_logo.gif" alt="SonoPace" />
-    </a>
-    <span id="sonoads"></span>
+    <div class="container">
+      <div class="row">
+	<div class="col-xs-6">
+	  <a href="http://sonopace.com" title="life is meant to be heard!" id="logo">
+	    <img class="logo" src="images/sonopace_logo.gif" alt="SonoPace" />
+	  </a>
+	</div>
+	<div class="col-xs-6">
+	  <h3 id="sonoads"></h3>
+	</div>
+      </div>
+    </div>
   </div>
 
 
+
+  
   <!--
     <div class="top-distributed">
     <form id="login_form" action="">
@@ -408,10 +418,11 @@ $("body").vegas({
   <script>
 $(function(){
   $("#sonoads").typed({
-    strings: ["<h3>Share the Best Space Experiances!", 
-    "<h3>Enjoy your Music Everywhere!</h3>"
+    strings: ["<b>Share</b> the <b>Best</b> Space Experiences!", 
+    "<b>Enjoy</b> your Music <b>Everywhere</b>!"
     ],
     loop: true,
+    showCursor: false,
     contentType: 'html',
     typeSpeed: 0
   });

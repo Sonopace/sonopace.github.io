@@ -37,27 +37,55 @@
 <link href="css/musicplayer.css" rel="stylesheet" type="text/css" />
 <link href="css/main.css" rel="stylesheet" type="text/css" />
 
+
+
+<!--
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+-->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="js/vendor/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+<script src="js/vendor/js.cookie.js"></script>
+<script src="js/vendor/vegas.min.js"></script>
+
+
 </head>
 
 
 <body>
-  <!--
-<form id="login_form" action="">
-  Username: <input id="username" type="text" name="username"><br>
-  Password: <input id="password" type="password" name="password"><br>
 
-  <button id="login">login</button>
-    <input id="login" type="login">
-</form>
+  <div class="top-distributed">
+  <form id="login_form" action="">
+    Email: <input id="space_email" type="email" name="space_email"><br>
+    Password: <input id="space_pass" type="password" name="space_pass"><br>
 
+    <button id="login">login</button>
+  </form>
+  </div>
+  <br>
+  <div class="top-distributed">
+  <form id="signup_form" action="">
+    Email: <input id="email" type="email" name="email"><br>
+    Password: <input id="pass" type="password" name="pass"><br>
+    Repeat Password: <input id="repeated_pass" type="password" name="pass"><br>
+    Space Name : <input id="name" type="text" name="name"><br>
+    Mobile: <input id="mobile" type="text" name="mobile"><br>
+    Address: <input id="address" type="text" name="address"><br>
+
+    <button id="signup">signup</button>
+  </form>
+  </div>
+
+
+  <br>
 
   <button id="channel">play channel</button>
-
 <div id="player_area">
   <h2 class="pink">Let jQuery AJAX Change This Text</h2>
 </div>
 
---!>
+
+
   <div class="top-distributed">
 <a href="http://sonopace.com" title="life is meant to be heard!" id="logo">
   <img class="logo" src="images/sonopace_logo.gif" alt="SonoPace" />
@@ -196,10 +224,10 @@ Address: 51B Egypt Helwan Agriculture road Maadi, Cairo Egypt.
 
 		</footer>
 
-  <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="js/vendor/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/musicplayer.js" type="text/javascript"></script>
-  <script src="js/vendor/vegas.min.js"></script>
+		<script src="js/musicplayer.js" type="text/javascript"></script>
+		<script src="js/app.js"></script>
+
+
   <script>
 $("body").vegas({
 delay: 12000,

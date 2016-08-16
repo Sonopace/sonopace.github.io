@@ -114,34 +114,28 @@
     <div class="container">    
       <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
 	<div class="panel panel-info" >
-	  <!--
-     <div class="panel-heading">
-     <div class="panel-title">Sign In using your Space Email & Password</div>
-     <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
-     </div>     
-	  -->
-
+	  
 	  <div style="padding-top:30px" class="panel-body" >
 
 	    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-	    <form id="loginform" class="form-horizontal" role="form">
+	    <form id="login_form" class="form-horizontal" role="form">
 
 	      <div style="margin-bottom: 25px" class="input-group">
 		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		<input id="email" type="email" class="form-control" name="email" value="" placeholder="email">                                        
+		<input id="space_email" type="email" class="form-control" name="space_email" value="" placeholder="space email">                                  
 	      </div>
 
 	      <div style="margin-bottom: 25px" class="input-group">
 		<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-		<input id="space_pass" type="password" class="form-control" name="space_pass" placeholder="password">
+		<input id="space_pass" type="password" class="form-control" name="space_pass" placeholder="space password">
 	      </div>
 
 	      <div style="margin-top:10px" class="form-group">
 		<!-- Button -->
 
 		<div class="col-sm-12 controls">
-		  <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+		  <a id="login" href="#" class="btn btn-success">Login</a>
 		</div>
 	      </div>
 
@@ -167,7 +161,7 @@
      </div>  
 	  -->
 	  <div class="panel-body" >
-	    <form id="signupform" class="form-horizontal" role="form">
+	    <form id="signup_form" class="form-horizontal" role="form">
 
 	      <div id="signupalert" style="display:none" class="alert alert-danger">
 		<p>Error:</p>
@@ -175,45 +169,45 @@
 	      </div>
 
 
-
 	      <div class="form-group">
-		<label for="email" class="col-md-3 control-label">Email</label>
-		<div class="col-md-9">
-		  <input type="text" class="form-control" name="email" placeholder="Email Address">
+		<div class="col-md-12">
+		  <input id="email" type="email" class="form-control" name="email" placeholder="email">
 		</div>
 	      </div>
 
 	      <div class="form-group">
-		<label for="firstname" class="col-md-3 control-label">First Name</label>
-		<div class="col-md-9">
-		  <input type="text" class="form-control" name="firstname" placeholder="First Name">
+		<div class="col-md-12">
+		  <input id="pass" type="password" class="form-control" name="pass" placeholder="password">
 		</div>
 	      </div>
 	      <div class="form-group">
-		<label for="lastname" class="col-md-3 control-label">Last Name</label>
-		<div class="col-md-9">
-		  <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+		<div class="col-md-12">
+		  <input id="rpt-pass" type="password" class="form-control" name="rpt-pass" placeholder="repeat password">
 		</div>
 	      </div>
 	      <div class="form-group">
-		<label for="password" class="col-md-3 control-label">Password</label>
-		<div class="col-md-9">
-		  <input type="password" class="form-control" name="passwd" placeholder="Password">
+		<div class="col-md-12">
+		  <input id="name" type="text" class="form-control" name="name" placeholder="space name">
 		</div>
 	      </div>
 
 	      <div class="form-group">
-		<label for="icode" class="col-md-3 control-label">Invitation Code</label>
-		<div class="col-md-9">
-		  <input type="text" class="form-control" name="icode" placeholder="">
+		<div class="col-md-12">
+		  <input id="mobile" type="tel" class="form-control" name="mobile" placeholder="mobile number">
 		</div>
 	      </div>
+
+	      <div class="form-group">
+		<div class="col-md-12">
+		  <input id="address" type="tel" class="form-control" name="address" placeholder="address">
+		</div>
+	      </div>
+
 
 	      <div class="form-group">
 		<!-- Button -->                                        
-		<div class="col-md-offset-3 col-md-9">
-		  <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
-
+		<div class="col-sm-12 controls">
+		  <button id="signup" type="button" class="btn btn-info">Sign Up</button>
 		</div>
 	      </div>                                
 

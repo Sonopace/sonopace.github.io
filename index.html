@@ -35,6 +35,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/vendor/cyborg.bootstrap.min.css" type="text/css" media="screen" />
+
   <link href="css/vendor/font-awesome.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/vendor/jquery.modal.css" type="text/css" media="screen" />
@@ -102,10 +105,12 @@
     <div class="container">    
       <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
 	<div class="panel panel-info" >
+	    <!--
 	  <div class="panel-heading">
-	    <div class="panel-title">Sign In</div>
-	    <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+	    <div class="panel-title">Sign In using your Space Email & Password</div>
+       <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
 	  </div>     
+	    -->
 
 	  <div style="padding-top:30px" class="panel-body" >
 
@@ -115,12 +120,12 @@
 
 	      <div style="margin-bottom: 25px" class="input-group">
 		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
+		<input id="email" type="email" class="form-control" name="email" value="" placeholder="email">                                        
 	      </div>
 
 	      <div style="margin-bottom: 25px" class="input-group">
 		<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-		<input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+		<input id="space_pass" type="password" class="form-control" name="space_pass" placeholder="password">
 	      </div>
 
 	      <div style="margin-top:10px" class="form-group">
@@ -135,9 +140,8 @@
 	      <div class="form-group">
 		<div class="col-md-12 control">
 		  <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-		    Don't have an account! 
 		    <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-		      Sign Up Here
+		      Don't have an account! <b>Sign Up Here</b>
 		    </a>
 		  </div>
 		</div>
@@ -148,10 +152,11 @@
       </div>
       <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 	<div class="panel panel-info">
+<!--
 	  <div class="panel-heading">
 	    <div class="panel-title">Sign Up</div>
-	    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
 	  </div>  
+-->
 	  <div class="panel-body" >
 	    <form id="signupform" class="form-horizontal" role="form">
 
@@ -199,9 +204,22 @@
 		<!-- Button -->                                        
 		<div class="col-md-offset-3 col-md-9">
 		  <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
-		  <span style="margin-left:8px;">or</span>  
-		</div>
+
+   		</div>
 	      </div>                                
+
+
+
+	      <div class="form-group">
+		<div class="col-md-12 control">
+		  <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+		    <div>
+		      <div style="float:left; font-size: 125%; position: relative;"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">If you do have a Space account, please <b>Sign In</b></a></div>
+		    </div>
+
+		  </div>
+		</div>
+	      </div>    
 
 	    </form>
 	  </div>

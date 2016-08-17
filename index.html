@@ -282,8 +282,7 @@
   <!-- Modal HTML embedded directly into document -->
   <div id="about" style="display:none;">
     <p>
-    <h1>About</h1>
-    <h2>
+    <h4>About</h4>
       SonoPace creates immersive sound experiences by curating the ultimate perfect sound for businesses.
       <br>
       <br>
@@ -293,14 +292,12 @@
       SonoPace creates the ideal interplay of environment and sound to assemble a new physical reality by providing a unique sound experiences that changes the way your audience communicate and interact with your brand.
       <br>
       <br>
-    </h2>
-    <a href="#" rel="modal:close">Close</a> or press ESC</p>
+    </p>
   </div>
   <!-- Modal HTML embedded directly into document -->
   <div id="service" style="display:none;">
     <p>
-    <h1>Service</h1>
-    <h2>
+    <h4>Service</h4>
       <center> Music + Space = Experience </center>
       <br>
       SonoPace offers uniquely selected streamed playlists and live performances which are curated by SonoPace experts and contributors as well as other knowledgeable personnel from the music industry who creates immersive experience in-space or for-brands through music.
@@ -310,9 +307,9 @@
       <br>
       <br>
       As an updated service, SonoPace experience provides a personalized playlisting with end-user tuning, and predictive playlisting that adjusts acoustically to each customers and brand taste and context.
-    </h2>
-    <a href="#" rel="modal:close">Close</a> or press ESC</p>
+    </p>
   </div>
+
   <!--
     <div id="faq" style="display:none;">
     <p>faq.  <a href="#" rel="modal:close">Close</a> or press ESC</p>
@@ -322,8 +319,7 @@
   <!-- Modal HTML embedded directly into document -->
   <div id="apps" style="display:none;">
     <p>
-    <h1>Apps</h1>
-    <h2>
+    <h4>Apps</h4>
       SonoPace powers personal taste, through state-of- art application that works on creating playlists and music suggestions in-space and for-brands based on customers taste.
       <br>
       <br>
@@ -331,21 +327,18 @@
       <br>
       <br>
       It’s like having a personal DJ for every fan.
-    </h2>
-    <a href="#" rel="modal:close">Close</a> or press ESC</p>
+    </p>
   </div>
 
   <!-- Modal HTML embedded directly into document -->
   <div id="contact" style="display:none;">
     <p>
-    <h1>Contact</h1>
-    <h2>
-      Email : info@sonopace.com
+    <h4>Contact</h4>
+    Email : info@sonopace.com
       <br>
       <br>
       Address: 51B Egypt Helwan Agriculture road Maadi, Cairo Egypt.
-    </h2>
-    <a href="#" rel="modal:close">Close</a> or press ESC</p>
+    </p>
   </div>
 
 
@@ -393,7 +386,9 @@ $("body").vegas({
   delay: 12000,
   timer: false,
   shuffle: true,
-  transition: 'random',
+  //transition: 'random',
+  //transition: 'flash2',
+  transition: [ 'slidDown2', 'blur2', 'flash2' ],
   transitionDuration: 4000,
   //transitionDuration: 2000,
   slides: [

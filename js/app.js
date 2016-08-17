@@ -6,40 +6,81 @@ $(document).ready(function(){
       var login_data = $("#login_form").serialize();
       $.ajax({
 	type: "GET",
-	// url: "http://api.sonopace.com/v1/spaces/auth",
-	url: "http://localhost:8080/v1/spaces/auth",
+	// url: "http://api.sonopace.com/v1/spaces/session",
+	url: "http://localhost:8080/v1/spaces/session",
 	data: login_data,
-	success: function(data){ 
-	  console.log(data); 
-	  //Cookies.set('access_token', data["access_token"]);
-	  
-	  Cookies.set('sonopace_id', data["id"]);
-	  Cookies.set('sonopace_token', data["access_token"]);
 
-	  console.log(Cookies.get('sonopace_id')); 
-	  console.log(Cookies.get('sonopace_token')); 
+	statusCode: {
+	  200: function (response){
+	    console.log(response); 
+	    Cookies.set('sonopace_id', response["id"]);
+	    Cookies.set('sonopace_token', response["access_token"]);
+	    console.log(Cookies.get('sonopace_id')); 
+	    console.log(Cookies.get('sonopace_token')); 
 
-	  console.log("hello"); 
+	    $("#session_container").hide();
+	    $("#player_container").show();
+	  },
+	  401: function (response){
+	    console.log(response); 
+	    console.log("not authorized");
+	    alert("try again");
+	    $("#login_form").trigger('reset');
+	  }
 	},
+
 	dataType: "json"
+
       });
       return false;
     }
   });
 
-$("#signup").click(function(){
+  $("#signup").click(function(){
     $("input").prop('required',true);
+    $("#signup_form").validate({
+      rules: {
+	pass: { 
+	  required: true,
+	  minlength: 8,
+	  maxlength: 15,
+	} , 
+
+	cfmpass: { 
+	  equalTo: "#pass",
+	  minlength: 8,
+	  maxlength: 15
+	}
+      },
+      messages:{
+	password: { required:"the password is required"
+	}
+      }
+    });
     if ($("#signup_form").valid()) {
       var signup_data = $("#signup_form").serialize();
       $.ajax({
 	type: "POST",
-	url: "http://localhost:8080/v1/spaces/signup",
+	// url: "http://api.sonopace.com/v1/spaces/session",
+	url: "http://localhost:8080/v1/spaces/session",
 	data: signup_data,
-	success: function(data){ 
-	  console.log(data); 
-	  // Cookies.set('access_token', data["access_token"]);
-	  Cookies.set('sonopace_id', data["id"]);
-	  Cookies.set('sonopace_token', data["access_token"]);
+	statusCode: {
+	  201: function (response){
+	    console.log(response); 
+	    Cookies.set('sonopace_id', response["id"]);
+	    Cookies.set('sonopace_token', response["access_token"]);
+	    console.log(Cookies.get('sonopace_id')); 
+	    console.log(Cookies.get('sonopace_token')); 
+
+	    $("#session_container").hide();
+	    $("#player_container").show();
+	  },
+	  409: function (response){
+	    console.log(response); 
+	    console.log("not authorized");
+	    alert("try again");
+	    $("#login_form").trigger('reset');
+	  }
 	},
 	dataType: "json"
       });
@@ -49,7 +90,7 @@ $("#signup").click(function(){
 
 
   $("#channel").click(function(){
-      console.log(Cookies.get('sonopace')); 
+    console.log(Cookies.get('sonopace')); 
     $.ajax({
       //url: "http://api.sonopace.com/v1/channels?access_token=" + Cookies.get('access_token'),
       // url: "http://localhost:8080/v1/channels?access_token=" + Cookies.get('access_token'),
@@ -66,6 +107,8 @@ $("#signup").click(function(){
 
 
   });
+
+
 });
 
 
@@ -91,5 +134,3 @@ $('#player').click(function() {
 // $(".play-button").click(function() {
 //  $(this).toggleClass("paused");
 //});
-
-

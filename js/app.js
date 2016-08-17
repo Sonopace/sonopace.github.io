@@ -69,3 +69,27 @@ $("#signup").click(function(){
 });
 
 
+// music player
+var playing = false;
+var audio = new Audio("http://www.elated.com/res/File/articles/authoring/html/html5-audio/WhiteChristmas.ogg");
+
+$('#player').click(function() {
+
+  $('#player').toggleClass('glyphicon-play glyphicon-pause');
+
+  playing = !playing;
+
+  var animation = playing ? audio.play() : audio.pause();
+  var animation = playing ? 'stop' : 'play';
+
+  //$('#animate_to_' + animation).get(0).beginElement();
+
+  // $('#player_info').text('click to ' + (playing ? 'stop' : 'play'));
+  $('#player_info').text('song info');
+});
+
+// $(".play-button").click(function() {
+//  $(this).toggleClass("paused");
+//});
+
+

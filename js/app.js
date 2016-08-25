@@ -114,7 +114,7 @@ $(document).ready(function(){
 
 // music player
 var playing = false;
-var audio = new Audio("http://www.elated.com/res/File/articles/authoring/html/html5-audio/WhiteChristmas.ogg");
+var audio = new Audio("https://ia801408.us.archive.org/10/items/hw7hw7_hotmail_Mp3_201401/mp3.mp3");
 
 $('#player').click(function() {
 

@@ -31,7 +31,9 @@ dmp.auth.APPLICATION_ID = "692750620932-640ia195vql2g6o9utuo0q2990eohuf2";
 dmp.auth.CLIENT_ID = "692750620932-640ia195vql2g6o9utuo0q2990eohuf2.apps.googleusercontent.com";
 
 /** Some Google OAuth 2.0 scopes. */
-dmp.auth.DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/drive.file";
+//dmp.auth.DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/drive.file";
+//Changed to auth/drive Full permissive scope to access all of a user's files. Request this scope only when it is strictly necessary. Tokens with scope https://docs.google.com/feeds are accepted and treated the same as tokens with scope https://www.googleapis.com/auth/drive.
+dmp.auth.DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/drive"; 
 dmp.auth.DRIVE_INSTALL_SCOPE = "https://www.googleapis.com/auth/drive.install";
 dmp.auth.OPENID_SCOPE = "openid";
 

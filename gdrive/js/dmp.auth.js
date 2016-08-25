@@ -20,11 +20,11 @@ dmp.auth = dmp.auth || {};
 
 /** The Drive application ID. */
 //dmp.auth.APPLICATION_ID = "543871781652";
-dmp.auth.APPLICATION_ID = "1470153759684";
+dmp.auth.APPLICATION_ID = "sonopace-1470153759684";
 
 /** The app's Client ID. */
 //dmp.auth.CLIENT_ID = "543871781652.apps.googleusercontent.com";
-dmp.auth.CLIENT_ID = "1470153759684.apps.googleusercontent.com";
+dmp.auth.CLIENT_ID = "sonopace-1470153759684.apps.googleusercontent.com";
 
 /** Some Google OAuth 2.0 scopes. */
 dmp.auth.DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/drive.file";

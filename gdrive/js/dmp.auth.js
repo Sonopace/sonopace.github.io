@@ -34,8 +34,8 @@ dmp.auth.CLIENT_ID = "692750620932-640ia195vql2g6o9utuo0q2990eohuf2.apps.googleu
 //dmp.auth.DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/drive.file";
 //Changed to auth/drive Full permissive scope to access all of a user's files. Request this scope only when it is strictly necessary. Tokens with scope https://docs.google.com/feeds are accepted and treated the same as tokens with scope https://www.googleapis.com/auth/drive.
 dmp.auth.DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/drive"; 
-dmp.auth.DRIVE_INSTALL_SCOPE = "https://www.googleapis.com/auth/drive.install";
-dmp.auth.OPENID_SCOPE = "openid";
+//TODO check if can be removed dmp.auth.DRIVE_INSTALL_SCOPE = "https://www.googleapis.com/auth/drive.install";
+//TODO  check if can be removed dmp.auth.OPENID_SCOPE = "openid";
 
 /** The ID of the user that is currently authorized. */
 dmp.auth.userId = undefined;
@@ -118,7 +118,7 @@ dmp.auth.periodicCheckAuth = function(callback) {
     dmp.auth.accessTokenExpieryTimestamp = new Date().getTime() + parseInt(dmp.url.getHashParameter("expires_in")) * 1000;
     dmp.ui.buildPicker(); // Rebuilding the Picker since it depends on the access token
     // TODO: handle auth errors here
-    console.log("Found an access token: " + dmp.auth.accessToken);
+    console.log("Found an access token: " + dmp.auth.accessToken + "   will send it to api.sonopace.com/v1/users/gdrive");
     // Start the autorefresh chron job. Check every 60sec if the token is valid.
     window.setInterval(dmp.auth.conditionalRefreshAuth, 60000);
     dmp.auth.userId =dmp.url.getUserIdFromStateParam();

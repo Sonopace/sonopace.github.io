@@ -36,8 +36,10 @@ dmp.auth.CLIENT_ID = "692750620932-640ia195vql2g6o9utuo0q2990eohuf2.apps.googleu
 dmp.auth.DRIVE_FILE_SCOPE = "https://www.googleapis.com/auth/drive"; 
 //TODO check if can be removed 
 dmp.auth.DRIVE_INSTALL_SCOPE = "https://www.googleapis.com/auth/drive.install";
+dmp.auth.DRIVE_INSTALL_SCOPE = "";
 //TODO  check if can be removed 
 dmp.auth.OPENID_SCOPE = "openid";
+dmp.auth.OPENID_SCOPE = "";
 
 /** The ID of the user that is currently authorized. */
 dmp.auth.userId = undefined;

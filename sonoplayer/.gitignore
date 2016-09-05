@@ -1,0 +1,5 @@
+# -*- mode: gitignore; -*-
+*~
+*.swp
+\#*\#
+node_modules

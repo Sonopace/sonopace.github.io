@@ -53,13 +53,13 @@
   <script src="js/vendor/vegas.min.js"></script>
   <script src="js/vendor/typed.js"></script>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.yellow-red.min.css" />
+  <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
 
 </head>
 
-
 <body>
-
-
 
   <!--
     <div class="top-distributed">
@@ -98,7 +98,7 @@
       <div class="row">
 	<div class="col-xs-3">
 	  <a href="https://sonopace.com" title="life is meant to be heard!" id="logo">
-	    <img class="logo" src="/v1/images/sonopace_logo.gif" alt="SonoPace" />
+	    <img class="logo" src="images/sonopace_logo.gif" alt="SonoPace" />
 	  </a>
 	</div>
 	<div class="col-xs-7">
@@ -106,14 +106,25 @@
 	  <br>
 	  <br>
 	  <br>
-	  <h3 id="sonoads"></h3>
 
+	  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-button--primary">
+	    Try It Free!
+	  </button>
+	  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="color: black; background-color: yellow">
+	    live performances 
+	  </button>
+
+	  <h3 id="sonoads"></h3>
 
 	</div>
       </div>
     </div>
 
+
+
+
     <div id="player_container" class="container" hidden>
+
       <div class="row">
 	<div class="col-xs-6">
 	  <button id="player" class="btn btn-xl gi-1x glyphicon glyphicon-play"></button>
@@ -127,70 +138,70 @@
     <div id="session_container" class="container">    
 
       <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-	<div class="panel panel-info" >
+	  <div class="panel panel-info" >
 
-	  <div style="padding-top:30px" class="panel-body" >
+	    <div style="padding-top:30px" class="panel-body" >
 
-	    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+	      <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-	    <form id="login_form" class="form-horizontal" role="form">
+	      <form id="login_form" class="form-horizontal" role="form">
 
-	      <div style="margin-bottom: 25px" class="input-group">
-		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		<input id="space_email" type="email" class="form-control" name="space_email" value="" placeholder="space email">                                  
-	      </div>
-
-	      <div style="margin-bottom: 25px" class="input-group">
-		<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-		<input id="space_pass" type="password" class="form-control" name="space_pass" placeholder="space password">
-	      </div>
-
-	      <div style="margin-top:10px" class="form-group">
-		<!-- Button -->
-
-		<div class="col-sm-12 controls">
-		  <a id="login" href="#" class="btn btn-success">Login</a>
+		<div style="margin-bottom: 25px" class="input-group">
+		  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+		  <input id="space_email" type="email" class="form-control" name="space_email" value="" placeholder="space email">                                  
 		</div>
-	      </div>
 
+		<div style="margin-bottom: 25px" class="input-group">
+		  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+		  <input id="space_pass" type="password" class="form-control" name="space_pass" placeholder="space password">
+		</div>
 
-	      <div class="form-group">
-		<div class="col-md-12 control">
-		  <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-		    <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-		      Don't have an account! <b>Sign Up</b>
-		    </a>
+		<div style="margin-top:10px" class="form-group">
+		  <!-- Button -->
+
+		  <div class="col-sm-12 controls">
+		    <a id="login" href="#" class="btn btn-success">Login</a>
 		  </div>
 		</div>
-	      </div>    
-	    </form> 
-	  </div>                     
-	</div>  
-      </div>
-      <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-	<div class="panel panel-info">
-	  <!--
-     <div class="panel-heading">
-     <div class="panel-title">Sign Up</div>
-     </div>  
-	  -->
-	  <div class="panel-body" >
-	    <form id="signup_form" class="form-horizontal" role="form">
-
-	      <div id="signupalert" style="display:none" class="alert alert-danger">
-		<p>Error:</p>
-		<span></span>
-	      </div>
 
 
-	      <div class="form-group">
-		<div class="col-md-12">
-		  <input id="email" type="email" class="form-control" name="email" placeholder="email">
+		<div class="form-group">
+		  <div class="col-md-12 control">
+		    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+		      <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+			Don't have an account! <b>Sign Up</b>
+		      </a>
+		    </div>
+		  </div>
+		</div>    
+	      </form> 
+	    </div>                     
+	  </div>  
+	</div>
+	<div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+	  <div class="panel panel-info">
+	    <!--
+       <div class="panel-heading">
+       <div class="panel-title">Sign Up</div>
+       </div>  
+	    -->
+	    <div class="panel-body" >
+	      <form id="signup_form" class="form-horizontal" role="form">
+
+		<div id="signupalert" style="display:none" class="alert alert-danger">
+		  <p>Error:</p>
+		  <span></span>
 		</div>
-	      </div>
 
-	      <div class="form-group">
-		<div class="col-md-12">
+
+		<div class="form-group">
+		  <div class="col-md-12">
+		    <input id="email" type="email" class="form-control" name="email" placeholder="email">
+		  </div>
+		</div>
+
+		<div class="form-group">
+		  <div class="col-md-12">
 		  <input id="pass" type="password" class="form-control" name="pass" placeholder="password">
 		</div>
 	      </div>
@@ -371,12 +382,15 @@
       ·
       <a href="#contact" rel="modal:open">contact</a>
 
+
       </p>
+
 
       <p>SonoPace &copy; 2016</p>
     </div>
 
   </footer>
+
 
   <script src="js/app.js"></script>
 

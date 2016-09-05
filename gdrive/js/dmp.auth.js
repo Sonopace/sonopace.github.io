@@ -121,6 +121,7 @@ dmp.auth.periodicCheckAuth = function(callback) {
     dmp.auth.accessTokenExpieryTimestamp = new Date().getTime() + parseInt(dmp.url.getHashParameter("expires_in")) * 1000;
     dmp.ui.buildPicker(); // Rebuilding the Picker since it depends on the access token
     // TODO: handle auth errors here
+    // TODO send to sonopace here
     console.log("Found an access token: " + dmp.auth.accessToken + "   will send it to api.sonopace.com/v1/users/gdrive");
     // Start the autorefresh chron job. Check every 60sec if the token is valid.
     window.setInterval(dmp.auth.conditionalRefreshAuth, 60000);

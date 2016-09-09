@@ -1,7 +1,7 @@
 import React 		from 'react';
 import ReactDOM 	from 'react-dom';
 import App 		from './../components/app/App';
-import SongsSelector 	from './../components/songs_selector/songs_selector';
+import Media 		from './../components/media/media';
 
 import './index.css';
 
@@ -24,7 +24,4 @@ ReactDOM.render(
  * 	]
  *}
  */
-ReactDOM.render(
-    <SongsSelector />,
-    document.getElementById('songs_selector')
-    );
+ReactDOM.render( <Media />, document.getElementById('media') );

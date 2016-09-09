@@ -34,6 +34,7 @@ class Media extends Component {
 
       // Set appropriate headers
       // xhr.setRequestHeader("Content-Type", "multipart/form-data");
+      xhr.setRequestHeader("Content-Type", "application/json");
       xhr.setRequestHeader("X-File-Name", file.name);
       xhr.setRequestHeader("X-File-Size", file.size);
       xhr.setRequestHeader("X-File-Type", file.type);
